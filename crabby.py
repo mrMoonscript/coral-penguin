@@ -27,7 +27,10 @@ from PySide6.QtGui import (
     QTextCursor,
 )
 from PySide6.QtCore import Qt, QStringListModel
-from subprocess import CREATE_NEW_CONSOLE
+if sys.platform == "win32":
+    from subprocess import CREATE_NEW_CONSOLE
+else:
+    CREATE_NEW_CONSOLE = 0
 import shutil
 from src.core import CrabHighlighter, CrabCodeHinter
 

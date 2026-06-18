@@ -85,6 +85,8 @@ QPlainTextEdit#editor {
     background-color: #180711;
     color: #FFF4FA;
     border: none;
+    font-family: "DejaVu Sans Mono", "Consolas", "Courier New", monospace;
+    font-size: 14px;
     selection-background-color: #D162A4;
     selection-color: white;
     padding: 12px;

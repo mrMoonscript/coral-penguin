@@ -3,7 +3,10 @@ import os
 import pathlib
 import subprocess
 from pathlib import Path
-from subprocess import CREATE_NEW_CONSOLE
+if sys.platform == "win32":
+    from subprocess import CREATE_NEW_CONSOLE
+else:
+    CREATE_NEW_CONSOLE = 0
 
 from PySide6.QtWidgets import (
     QApplication,
@@ -80,14 +83,10 @@ class Main(QWidget):
             return
 
         self.saveFile()
-
-        command = f'cd /d "{self.currentDir}" && yurilang "{self.currentFile}"'
-
+        command = f'cd "{self.currentDir}" && yuri "{self.currentFile}"'
         subprocess.Popen(
-            ["cmd", "/k", command],
-            creationflags=CREATE_NEW_CONSOLE,
+            ["konsole", "--noclose", "-e", "bash", "-c", command]
         )
-
     def createNewfile(self):
         name = self.askUser("Enter filename with extension (.yuri):", "Create New File")
 
