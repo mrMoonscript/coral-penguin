@@ -6,9 +6,9 @@ A fork of Coral IDE, a lightweight Code Editor for the language [Crabby](https:/
 > Project is still in beta, meaning rapid changes and updates occur or slows down.
 
 ## Setup
-First up, install Python 3 from your distro's package manager.
-Then, install Yurilang and Crabby from the Codeberg repos (linked above).
-After all that, run the launcher script:
+First up, install Python 3 from your distro's package manager.  
+Then, install Yurilang and Crabby from the Codeberg repos (linked above).  
+After all that, run the launcher script:  
 `python3 launcher.py`
 ## Contribution
 
